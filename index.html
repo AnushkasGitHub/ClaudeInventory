@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explosive Compatibility Database</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Loading explosives database...</p>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>EXPLOSIVES COMPATIBILITY</h1>
+            <p class="subtitle">Hazard Division & Compatibility Group Database</p>
+        </header>
+
+        <main>
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search for a classification (e.g., 1.1D)...">
+                <div id="autocomplete-list" class="autocomplete-items"></div>
+            </div>
+
+            <button id="openModalBtn" class="add-new-btn">Add New Explosive</button>
+
+            <div id="results-container" class="results-card" style="display: none;">
+                <h2 id="result-title"></h2>
+                <div class="result-info">
+                    <p><strong>Compatibility Group:</strong> <span id="result-compatibility-group"></span></p>
+                    <p><strong>Sub Division:</strong> <span id="result-subdivision"></span></p>
+                </div>
+                <p id="result-description"></p>
+                <hr>
+                <h3>COMPATIBLE EXPLOSIVES:</h3>
+                <p id="result-compatibility"></p>
+            </div>
+            
+            <div id="placeholder-text">
+                <p>Search for an explosive classification to see its details.</p>
+            </div>
+
+            <div id="error-message" class="error-message" style="display: none;">
+                <p>Failed to connect to database. Please try again later.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>For reference purposes only. Always consult official regulations before handling or transporting dangerous goods.</p>
+        </footer>
+    </div>
+
+    <div id="addExplosiveModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Explosive Data</h2>
+            <form id="addExplosiveForm">
+                <label for="addCode">Classification Code:</label>
+                <input type="text" id="addCode" placeholder="e.g., 1.7G" required>
+
+                <label for="addCompatibilityGroup">Compatibility Group:</label>
+                <input type="text" id="addCompatibilityGroup" placeholder="e.g., G" required>
+
+                <label for="addSubDivision">Sub Division:</label>
+                <input type="text" id="addSubDivision" placeholder="e.g., 1.7" required>
+
+                <label for="addDescription">Description of Substance or Article:</label>
+                <textarea id="addDescription" rows="4" placeholder="Enter full description of the hazard..." required></textarea>
+
+                <label for="addCompatible">Compatible Explosives:</label>
+                <input type="text" id="addCompatible" placeholder="e.g., 1.1C, 1.2C, 1.4S">
+
+                <button type="submit" class="save-btn">Save Explosive</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
