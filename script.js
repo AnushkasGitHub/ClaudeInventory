@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURATION ---
     // IMPORTANT: This should be your deployed Google Apps Script Web App BASE URL.
     // DO NOT include "?action=getData" or any other parameters here.
-    const GOOGLE_SCRIPT_BASE_URL = 'https://script.google.com/macros/s/AKfycbxJ-w62h8RzHzgUFcM6ok-HuMNLbXm7ZyY5-MJ2PHo0LcmtspgyKAku4klFKy43TUdsDQ/exec'; // Make sure this matches your actual base URL
+    const GOOGLE_SCRIPT_BASE_URL = 'https://script.google.com/macros/s/AKfycbyiQc2oskO7kHchGoAL0pSWrAE-kshlp_WxVJUcxDJl6E3mE6_MiDVk15surBugZnsS0w/exec'; // Make sure this matches your actual base URL
     const SHEET_NAME = 'Sheet1'; // This is used by your Apps Script, not directly here.
 
     // --- DATA MANAGEMENT ---
