@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // CORRECTED: Using base URL directly for POST requests
             const response = await fetch(GOOGLE_SCRIPT_BASE_URL, {
                 method: 'POST',
+                redirect: 'follow',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -125,16 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- FALLBACK DATA (as provided in your script.js) ---
-    function getFallbackData() {
-        return [
-            { "code": "1.1A", "description": "Substances and articles which have a mass explosion hazard. Consists of primary explosives such as lead azide, lead styphnate, tetracene, etc. transport of these explosives is forbidden except in special cases.", "compatibilityGroup": "A", "subDivision": "1.1", "compatibleExplosives": "1.1A" },
-            { "code": "1.1B", "description": "Articles which have a mass explosion hazard but are not made of primary explosives. It comprises items filled with secondary explosives, like bombs, torpedoes, grenades and rockets.", "compatibilityGroup": "B", "subDivision": "1.1", "compatibleExplosives": "1.1B, 1.1C, 1.1D, 1.1E, 1.2B, 1.2C, 1.2D, 1.2E, 1.3C, 1.4B, 1.4C, 1.4D, 1.4E, 1.4S, 1.5D" },
-            { "code": "1.1C", "description": "Substances and articles which have a fire hazard and either a minor blast hazard or a minor projection hazard or both, but not a mass explosion hazard.", "compatibilityGroup": "C", "subDivision": "1.1", "compatibleExplosives": "1.1B, 1.1C, 1.1D, 1.1E, 1.1G, 1.2B, 1.2C, 1.2D, 1.2E, 1.2G, 1.3C, 1.3G, 1.4B, 1.4C, 1.4D, 1.4E, 1.4G, 1.4S, 1.5D" },
-            { "code": "1.4S", "description": "Substances and articles which present no significant hazard, packed or designed to present only a small hazard in the event of accidental ignition.", "compatibilityGroup": "S", "subDivision": "1.4", "compatibleExplosives": "1.1B, 1.1C, 1.2B, 1.2C, 1.3C, 1.4B, 1.4C, 1.4S" },
-            { "code": "1.5D", "description": "Very insensitive substances which have a mass explosion hazard but are so insensitive that there is very little probability of initiation.", "compatibilityGroup": "D", "subDivision": "1.5", "compatibleExplosives": "1.1B, 1.1C, 1.1D, 1.1E, 1.1G, 1.2B, 1.2C, 1.2D, 1.2E, 1.2G, 1.3C, 1.3G, 1.4B, 1.4C, 1.4D, 1.4E, 1.4G, 1.5D" },
-            { "code": "1.6N", "description": "Extremely insensitive articles which do not have a mass explosion hazard. Containing only extremely insensitive substances and which demonstrate a negligible probability of accidental initiation or propagation.", "compatibilityGroup": "N", "subDivision": "1.6", "compatibleExplosives": "" }
-        ];
-    }
+
 
     // --- SEARCH & AUTOCOMPLETE (Code as previously provided by you, no changes needed here) ---
     searchInput.addEventListener('input', function() {
